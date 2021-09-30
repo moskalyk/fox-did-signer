@@ -1,4 +1,4 @@
-// runner 
+// runner, doesn't work without a real world browser
 const Fox = require('./index.js')
 
 const fdid = new Fox()

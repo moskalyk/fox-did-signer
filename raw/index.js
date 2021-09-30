@@ -1,5 +1,3 @@
-
-
 class Fox {
 	constructor(){
 		this.identity = null
@@ -8,6 +6,12 @@ class Fox {
 	snapshot(matrix){
 		const blob = new Blob([JSON.stringify(matrix, null, 2)], {type : 'application/json'});
 		console.log(blob)
+
+		const file = new File([blob], `capture-${Date.now()}.txt`, {
+		  type: "text/plain",
+		  lastModified: new Date().getTime(),
+		});
+
 		return blob
 	}
 
@@ -18,4 +22,5 @@ class Fox {
 	}
 }
 
-module.exports = Fox
+export default Fox
+
